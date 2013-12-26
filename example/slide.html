@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bootstrap 101 Template</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../css/bootstrap3/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/carousel.css">
+    <link href="../css/unslide.css" rel="stylesheet" type="text/css"
+	media="screen" />
+	
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="../js/html5shiv.min.js"></script>
+        <script src="../js/respond.min.js"></script>
+    <![endif]-->
+    
+    
+   
+
+
+
+  </head>
+  <body>
+  	
+  	
+	
+<div class="bs-docs-section">
+    <div class="page-header">
+      <h1 id="carousel">轮播 <small>carousel.js</small></h1>
+    </div>
+
+  
+<div class="banner">
+			<ul>
+				<li style="background-image: url('../images/1.jpg');">
+					<div class="inner">
+						<h1>The jQuery slider that just slides.</h1>
+						<p>就是这个不到3kb的插件！没有奇特的特效或无用的标签。</p>
+
+						<a class="btn" href="#download">下载</a>
+					</div>
+				</li>
+
+				<li style="background-image: url('../images/2.jpg');">
+					<div class="inner">
+						<h1>Fluid, flexible, fantastically minimal.</h1>
+						<p>Use any HTML in your slides, extend with CSS. You have full control.</p>
+
+						<a class="btn" href="#download">下载</a>
+					</div>
+				</li>
+
+				<li style="background-image: url('img/subway.jpg');">
+					<div class="inner">
+						<h1>开源</h1>
+						<p>Unslider的所有源码都托管在GitHub上。</p>
+
+						<a class="btn" href="//github.com/idiot/unslider">参与</a>
+					</div>
+				</li>
+
+				<li style="background-image: url('img/shop.jpg');">
+					<div class="inner">
+						<h1>Uh, that’s about it.</h1>
+						<p>I just wanted to show you another slide.</p>
+
+						<a class="btn" href="#download">下载</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+  	 
+   
+		
+		
+    <h2 id="carousel-examples">案例</h2>
+    <p>下面展示的就是此插件和相关组件制作的轮播案例。</p>
+    <div class="container">
+      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="item active">
+            <img data-src="holder.js/100%/auto"   alt="First slide" src="../images/1.jpg">
+          </div>
+          <div class="item">
+            <img  data-src="holder.js/100%/auto"  alt="Second slide" src="../images/2.jpg">
+          </div>
+         
+        </div>
+        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+      </div>
+    </div><!-- /example -->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../js/bootstrap3/bootstrap.min.js"></script>
+    <script src="../js/unslide.js"></script>
+    
+ <script>    
+    $(document).ready(function() {
+    	
+    	if(window.chrome) {
+				$('.banner li').css('background-size', '100% 100%');
+			}
+
+			$('.banner').unslider({
+				arrows: true,
+				fluid: true,
+				dots: true
+			});
+});
+</script>
+  </body>
+</html>
+
+
+
+    
+
