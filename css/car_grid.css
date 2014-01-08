@@ -27,13 +27,19 @@ hr {
 }
 
 body{
-	
+
 	background-color: #FFFFFF;
 }
 
 .foot_rt_icon {
 	margin-right:10px;
 	float:right;
+	
+
+}
+.foot_rt_icon img{
+	width:30px;
+	height:30px;
 
 }
 
@@ -41,9 +47,9 @@ body{
 	
     padding:5px;
 	float:right;
-	width:50px;
+	width:20px;
 	border:1px solid #00F;
-	height:50px;
+	height:20px;
 }
 
 .clear{ 
