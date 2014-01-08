@@ -1,0 +1,51 @@
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+h4 {
+  margin-top: 25px;
+}
+.row {
+  margin-bottom: 0px;
+}
+.row .row {
+  margin-top: 0px;
+  margin-bottom: 0;
+}
+[class*="col-"] {
+
+
+  padding-top: 0px;
+  padding-bottom: 0px;
+  background-color: #111;
+}
+
+hr {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+body{
+	
+	background-color: #FFFFFF;
+}
+
+.foot_rt_icon {
+	margin-right:10px;
+	float:right;
+
+}
+
+.foot_rt_icon2 {
+	
+    padding:5px;
+	float:right;
+	width:50px;
+	border:1px solid #00F;
+	height:50px;
+}
+
+.clear{ 
+	clear:left;
+} 
