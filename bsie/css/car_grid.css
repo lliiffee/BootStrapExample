@@ -128,13 +128,13 @@
     -------------------------------------------------- */
 
     /* Center align the text within the three columns below the carousel */
-    .marketing .span4 {
+    .marketing .span3 {
       text-align: center;
     }
     .marketing h2 {
       font-weight: normal;
     }
-    .marketing .span4 p {
+    .marketing .span3 p {
       margin-left: 10px;
       margin-right: 10px;
     }
