@@ -13,12 +13,16 @@ h4 {
   margin-top: 0px;
   margin-bottom: 0;
 }
+
+
+
 [class*="col-"] {
 
 
   padding-top: 0px;
   padding-bottom: 0px;
   background-color: #111;
+
 }
 
 hr {
@@ -26,11 +30,23 @@ hr {
   margin-bottom: 40px;
 }
 
-body{
+body {
 
 	background-color: #FFFFFF;
+
+	  padding-top: 20px;
 }
 
+
+.navbar {
+  margin-bottom: 20px;
+  background-color: #eee;
+}
+
+.left_img
+{
+	float:left;
+}
 .foot_rt_icon {
 	margin-right:10px;
 	float:right;
@@ -43,15 +59,33 @@ body{
 
 }
 
-.foot_rt_icon2 {
-	
-    padding:5px;
-	float:right;
-	width:20px;
-	border:1px solid #00F;
-	height:20px;
+
+ .hdline {
+background: url(../img/line.png) repeat-x;
 }
 
-.clear{ 
-	clear:left;
-} 
+.bs-footer {
+padding-top: 0px;
+padding-bottom: 0px;
+margin-top: 0px;
+color: #777;
+text-align: left;
+
+border-top: 1px solid #e5e5e5;
+
+}
+
+
+
+
+
+.brand{
+    *border-width: 0;
+}
+div.col-sm-offset-2{
+    _margin-left: 8.8%;
+}
+.nav li {
+    float: left;
+}
+
