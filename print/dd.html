@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>jQuery UI Droppable - Accept</title>
+	<link rel="stylesheet" href="css/jquery-ui.css">
+	<script src="js/jquery-1.10.2.js"></script>
+	<script src="js/jquery.ui.core.js"></script>
+	<script src="js/jquery.ui.widget.js"></script>
+	<script src="js/jquery.ui.mouse.js"></script>
+	<script src="js/jquery.ui.draggable.js"></script>
+	<script src="js/jquery.ui.droppable.js"></script>
+	<script src="js/jquery.ui.resizable.js"></script>
+	<link rel="stylesheet" href="css/demos.css">
+	<style>
+	#droppable { width: 800; height: 800px; padding: 0.5em; float: left; margin: 10px;  }
+	.ui-widget-content { width: 100px; height: 30px; padding: 0.5em;  margin: 10px 10px 10px 0;position: absolute; cursor: move; }
+	</style>
+	<script>
+	$(function() {
+		$( ".ui-widget-content" ).draggable();
+		$( "#droppable" ).droppable({
+			accept: "#draggable",
+			activeClass: "ui-state-hover",
+			hoverClass: "ui-state-active",
+			drop: function( event, ui ) {
+				$( this )
+					.addClass( "ui-state-highlight" )
+					.find( "p" )
+						.html( "Dropped!" );
+			}
+		});
+		
+		$( ".ui-widget-content" ).resizable({
+			containment: "#droppable"
+		});
+		
+	});
+	</script>
+</head>
+<body>
+	
+	<form name="template"  >
+<ul>
+<li><label class="list-label" for="">模板名称：</label><input type="text" class="text" name="_fmw.te._0.t" value="顺丰速运"/>	</li>
+<li><label class="list-label" for="">模板名称：</label><input type="text" class="text" name="_fmw.te._0.t" value="顺丰速运"/>	</li>
+<li><label class="list-label" for="">模板名称：</label><input type="text" class="text" name="_fmw.te._0.t" value="顺丰速运"/>	</li>
+<li><label class="list-label" for="">模板名称：</label><input type="text" class="text" name="_fmw.te._0.t" value="顺丰速运"/>	</li>
+<li><label class="list-label" for="">模板名称：</label><input type="text" class="text" name="_fmw.te._0.t" value="顺丰速运"/>	</li>
+<li><label class="list-label" for="">模板名称：</label><input type="text" class="text" name="_fmw.te._0.t" value="顺丰速运"/>	</li>
+</ul>
+
+<div  id="droppable" class="ui-widget-header" >
+	<p>accept: '#draggable'</p>
+	<img width="766" src=" http://img02.taobaocdn.com/bao/uploaded/i2/T1YRxuXaBEXXb1upjX.jpg " height="510" style="height: 510.66666666666663px;">
+</div>
+
+<div id="draggable1" class="ui-widget-content">
+	<p>姓名</p>
+</div>
+
+<div id="draggable2" class="ui-widget-content">
+	<p>电话</p>
+</div>
+
+
+<div id="draggable3" class="ui-widget-content">
+	<p>地址</p>
+</div>
+
+	</form>
+</body>
+</html>
