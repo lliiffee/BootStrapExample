@@ -183,6 +183,9 @@ var options = { validate: true, name: "bar" };
 jQuery.extend(settings, options);
 结果：settings == { validate: true, limit: 5, name: "bar" }
 
+上述的extend方法原型中的dest参数是可以省略的，如果省略了，则该方法就只能有一个src参数，而且是将该src合并到调用extend方法的对象中去
+如： $.extend(src)
+
 jQuery.fn.extend(object); 对jQuery.prototype进得扩展，就是为jQuery类添加“成员函数”。jQuery类的实例可以使用这个“成员函数”。
 比如我们要开发一个插件，做一个特殊的编辑框，当它被点击时，便alert 当前编辑框里的内容。可以这么做：
 $.fn.extend({          
