@@ -100,16 +100,113 @@ console.log("Ra.prototype.constructor:");
 console.log(Ra.prototype.constructor);
 
 var aQuery = function(selector, context) {
-      // return new aQuery();
-};
+       return  new aQuery.prototype.init();
+}
 aQuery.prototype = {
-    name:function(){},
-    age:function(){}
-};
+    init: function() {
+        return this;
+    },
+    name: function() {
+        return this.age
+    },
+    age: 20
+}
 
-//aQuery().name();
+aQuery.prototype.init.prototype = aQuery.prototype;
 
 
+
+
+
+aQuery.extend =aQuery.prototype.extend= function (){
+var target = arguments[0] || {}, // 第一个参数是目标   
+    i = 1, length = arguments.length, deep = false, options;   
+  
+    if (target.constructor == Boolean) {// 第一个参数是bool型的   
+        deep = target;// 深度copy   
+        target = arguments[1] || {};// target指向第二个参数   
+        i = 2;   
+    }   
+  
+    // target 是string 型的或？   
+    if (typeof target != "object" && typeof target != "function")   
+        target = {};   
+  
+    if (length == i) {// 只有一个参数？或deep copy 时，两个参数   
+        target = this;// 目标为this   
+        --i;   
+    }   
+  
+    for (;i < length; i++)   
+        if ((options = arguments[i]) != null)   
+  
+            for (var name in options) {   
+                var src = target[name], copy = options[name];   
+                if (target === copy)// 防止死循环   
+                    continue;   
+                // 深度copy处理，最深为元素   
+                if (deep && copy && typeof copy == "object" && !copy.nodeType)   
+                    target[name] = jQuery.extend(deep, src   
+                            || (copy.length != null ? [] : {}), copy);   
+                else if (copy !== undefined)// 直接copy   
+                    target[name] = copy;   
+  
+            }   
+  
+    return target;   
+ }
+
+var a=aQuery.prototype.extend(  //定义
+{   
+    tt : function() {   
+        console.log("定义成员方法");   
+    }
+}
+);
+
+var b=aQuery.extend(
+{   
+    test : function() {   
+        console.log("定义类方法");   
+    }
+}
+);
+
+ /*
+ 虽然 javascript　没有明确的类的概念，但是用类来理解它，会更方便。
+jQuery便是一个封装得非常好的类，比如我们用 语句　$("#btn1") 会生成一个 jQuery类的实例。
+jQuery.extend(object);　为jQuery类添加类方法，可以理解为添加静态方法
+jQuery.extend( target, object1, [objectN])用一个或多个其他对象来扩展一个对象，返回被扩展的对象
+
+var settings = { validate: false, limit: 5, name: "foo" }; 
+var options = { validate: true, name: "bar" }; 
+jQuery.extend(settings, options);
+结果：settings == { validate: true, limit: 5, name: "bar" }
+
+jQuery.fn.extend(object); 对jQuery.prototype进得扩展，就是为jQuery类添加“成员函数”。jQuery类的实例可以使用这个“成员函数”。
+比如我们要开发一个插件，做一个特殊的编辑框，当它被点击时，便alert 当前编辑框里的内容。可以这么做：
+$.fn.extend({          
+     alertWhileClick:function() {            
+           $(this).click(function(){                 
+                  alert($(this).val());           
+            });           
+      }       
+});       
+$("#input1").alertWhileClick(); // 页面上为：    
+$("#input1")　为一个jQuery实例，当它调用成员方法 alertWhileClick后，便实现了扩展，每次被点击时它会先弹出目前编辑里的内容。
+
+ */
+ console.log("3"); 
+ 
+ console.log(aQuery().name()); 
+ console.log(aQuery().tt()); 
+ console.log(aQuery.test()); 
+ //a.tt();
+ console.log("5");
+  
+ console.log();
+  console.log("6"); 
+//aQuery.prototype.b.test();
 //##############
 
  Functional.install();
