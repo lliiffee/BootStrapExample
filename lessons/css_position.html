@@ -1,0 +1,39 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<title>test</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+ 
+ <style>
+   p {width:300px; background-color: blue;}
+   p#specialpara{position: absolute; top:25px;left:30px;}
+   #note { border: 1px solid red; }
+   
+   div#outer {position:relative; width:250px; margin:50px 40px ; border-top:3px solid red;}
+   div#inner {position:absolute; top:10px; left:20px; background:#ccc;}
+  </style>
+</head> 
+<body> 
+	<h3> static relative absolute fixed</h3>
+ <p>first paragraph</p>
+ <p>second paragraph</p>
+ <p id="specialpara">third paragraph with ID</p>
+ <p>fourth paragraph</p>
+ 
+ <div id="outer">
+ 	<div id="inner">
+ 		inner text ........
+ 	</div>
+ </div>
+ 
+ <div id="note">
+ 	<li>static 默认就是static文档流,static 定位 不存在谁是谁的定位上下文，他们共享相同的起点。</li>
+ 	<li>relative 相对它原来在文档中的位置。原来的空间依然占据着</li>
+ 	<li>absolute 对应定位上下文body(可设定其他定位上下文)，会跟随页面滚动。原来的空间会被清空.</li>
+ 	<li>fixed 对应定位上下文window，区别于absolute 不会跟随页面滚动。原来的空间会被清空. （很少用）</li>
+ 	
+ 	<li>只要将父元素设为relative,父元素就会成为子元素的定位上下文。</li>
+ 	
+ </div>
+</body> 
+</html>  

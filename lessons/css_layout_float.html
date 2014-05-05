@@ -1,0 +1,104 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<title>test</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+
+ <style> 
+ 	 * {margin:0;padding: 0;}
+ 	 body {font:1em helvetica,Arial,sans-serif;}
+ 	header{
+ 		padding: 5px 10px;
+ 		background:#002A80;
+ 	}
+ 	 footer{
+ 		background:#0000FF;
+ 		clear: both;
+ 	}
+ 	
+ 	 
+ 	div#main_wrapper{
+ 		min-width:600px; max-width:960px;
+ 	/*超过最大宽度时，布局居中*/
+ 	   margin:0 auto;
+ 	  backgound:url(images/xxx.png) repeat-y #eee;
+ 	}
+ 	
+ 	
+ 	div#threecolwrap{
+ 		float:left;
+ 		width:100%;
+ 		backgound:url(images/xxx.png) top right repeat-y ;
+ 		
+ 	}
+ 	div#twocolwrap{
+ 	/*浮动强制它包围浮动拦*/
+ 	    float:left;
+ 	    width: 100%;
+ 	   margin-right:-210px; /*把右拦拉到区块外边距腾出的位置上*/
+ 	   
+ 		 
+ 	}
+ 	
+ 	  article {
+ 		width:auto;
+ 		margin-left:150px;
+ 		margin-right:210px;/*为流动居中的拦右腾出空间*/
+ 		background:#eee;
+ 		padding: 20px 0;
+ 		
+ 		}
+      article > * {margin:0 20px;} /* 让子元素与拦边界保持距离*/
+ 	nav{
+ 		float: left;
+ 		width:150px;
+ 		
+ 		background:#f00;
+ 		padding: 20px 0;
+ 		 
+
+ 	}
+ 	 nav li {
+ 		list-style-type: none;
+ 	}
+ 	  aside {
+ 		width: 210px;
+ 		float:left;
+ 		background:#3f7ccf;
+ 		padding: 20px 0;
+ 		 
+
+ 	}
+ aside > * {margin:0 10px;} /* 让子元素与拦边界保持距离*/
+ 	
+ </style>
+</head> 
+<body> 
+ /*#############负外边距实现＃＃＃＃＃＃＃＃＃＃＃＃＃＃*/
+<div id="main_wrapper">
+ 	<header>header..</header>
+ <div id="threecolwrap">	
+ 	<div id="twocolwrap">
+		 	<nav>
+		 		 
+		 		 list 1
+		 		 list 2
+		 		 list 3
+		 	</nav>
+		    <article>
+		    
+		       this is article 1...	  this is article 1...	  this is article 1...	  this is article 1...	  this is article 1...	  this is article 1...	  this is article 1...	  this is article 1...	  this is article 1...	  this is article 1...	  
+		       this is article 1...	  this is article 1...	  this is article 1...	  <br />this is article 1...	   
+		    </article> 
+	</div>
+		    <aside>
+		    	 
+		    	旁边。。。。
+		    	 
+		    </aside>
+ </div>
+    <footer> footer</footer>
+</div>
+
+</body> 
+</html> 

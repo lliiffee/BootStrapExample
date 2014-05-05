@@ -1,0 +1,59 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<title>test</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+
+  <script src="../js/jquery.min.js"></script>
+ <style>
+ section {border:1px solid blue; margin: 0 0 10px 0;  }
+ p  { margin:0; }
+ .clearfix:after{
+ 	content: ".";
+ 	display: block;
+ 	height: 0;
+ 	visibility: hidden;
+ 	clear: both;
+ }
+ img {float: left;}
+ footer { border: 1px solid red; clear: left;}
+ </style>
+</head> 
+<body> 
+	<h2> 浮动包围</h2>
+ <section class="clearfix">
+ 	<img src=../img/ava.jpg />
+ 	<p>its fun for float</p>
+ 	
+ </section>
+ <footer>
+ 	here is the footer......................
+ 	<ul>
+ 		<li>1.section {border:1px solid blue; margin: 0 0 10px 0; overflow: hidden; }</li>
+ 		<li>2.section {border:1px solid blue; margin: 0 0 10px 0; float: left;  width:100%;} 
+ 			<br>footer { border: 1px solid red; clear: left;}</li>
+ 			
+ 		<li>3.在最后加上空的元素，并clear 掉。</li>
+ 			
+ 	</ul>
+ 	</footer>
+<h2>float 是始终尽量向上靠，所以在有位置空间时，会出现我们以外效果。这要靠clear 解决</h2> 	
+ 	<section>
+ 		<img src=../img/ava.jpg />
+ 	<p>its fun for float1 ....</p>
+ 	
+ 	<img src=../img/ava.jpg />
+ 	<p>its fun for float 2...</p>
+ </section>
+ <h2>。这要靠clear 解决</h2> 	
+ 	<section>
+ 		<img src=../img/ava.jpg />
+ 	<p class="clearfix">its fun for float1 ....</p>
+ 	
+ 	<img src=../img/ava.jpg />
+ 	<p class="clearfix">its fun for float 2...</p>
+ </section>
+ 
+</body> 
+ 
+</html> 

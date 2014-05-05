@@ -1,0 +1,140 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<title>test</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+ <script src="js_tpl.js"></script>
+ <style> 
+ 	#note { border: 1px solid red; }
+ 	 /*######960 方便整除。。##############使用内部div 设置 边距，抵消设置了宽度的元素设置边框时，宽度带来变化 #################*/
+ 	#wrapper{
+ 		width:960px;
+ 	margin:0 auto;  /* 水平边距设置为auto 自动居中。。。*/
+ 		border:5px solid red;
+ 	}
+ 	#wrapper article {
+ 		float:left;
+ 		width: 600px;
+ 		background:#ffed53;
+ 		
+ 		}
+ 	#wrapper article .inner{
+ 		margin:10px;
+ 		border:2px solid green;
+ 		padding: 20px;
+ 	}
+ 	#wrapper nav{
+ 		width:150px;
+ 		float: left;
+ 		background:#dcd9c0;
+ 	}
+ 	#wrapper nav li {
+ 		list-style-type: none;
+ 	}
+ 	#wrapper aside {
+ 		width: 210px;
+ 		float:left;
+ 		background:#3f7ccf;
+ 	}
+ 	
+ 	#wrapper header{
+ 		background:#005580;
+ 	}
+ 	#wrapper footer{
+ 		background:#0000FF;
+ 		clear: both;
+ 	}
+ /*#################使用css3的 box-sizing:border-box 使设定边框时盒子宽度不会变化--borderBoxModel.js解决ie不支持问题  ####################*/
+#wrapper2{
+ 		width:960px;
+ 	margin:0 auto;  /* 水平边距设置为auto 自动居中。。。*/
+ 		border:5px solid red;
+ 	}
+ 	#wrapper2 article {
+ 		float:left;
+ 		width: 600px;
+ 		background:#ffed53;
+ 		padding: 10px 20px;
+ 		box-sizing:border-box;
+ 		}
+  
+ 	#wrapper2 nav{
+ 		width:150px;
+ 		float: left;
+ 		background:#dcd9c0;
+ 		padding: 10px 20px;
+ 		box-sizing:border-box;
+
+ 	}
+ 	#wrapper2 nav li {
+ 		list-style-type: none;
+ 	}
+ 	#wrapper2 aside {
+ 		width: 210px;
+ 		float:left;
+ 		background:#3f7ccf;
+ 		padding: 10px 20px;
+ 		box-sizing:border-box;
+
+ 	}
+ 	
+ 	#wrapper2 header{
+ 		background:#005580;
+ 	}
+ 	#wrapper2 footer{
+ 		background:#0000FF;
+ 		clear: both;
+ 	}
+ 	
+ </style>
+</head> 
+<body> 
+ <div id="wrapper">
+ 	<header>header..</header>
+ 	<nav>
+ 		<div class="inner">
+ 		 list 1
+ 		 list 2
+ 		 list 3</div>
+ 	</nav>
+    <article>
+    	<div class="inner">
+       this is article 1...	  
+       </div>
+    </article> 
+    <aside>
+    	<div class="inner">
+    	旁边。。。。
+    	</div>
+    </aside>
+    <footer> footer</footer>
+</div>
+
+<div id="wrapper2">
+ 	<header>header..</header>
+ 	<nav>
+ 		
+ 		<li> list 1</li>
+ 		 <li>list 2</li>
+ 		<li> list 3</li>
+ 	</nav>
+    <article>
+    	 
+       this is article 1...	  sdfsssssssssssssssssss sdfsssssssssssssssssss sdfsssssssssssssssssss sdfsssssssssssssssssss sdfsssssssssssssssssss sdfsssssssssssssssssss sdfsssssssssssssssssss sdfsssssssssssssssssss sdfsssssssssssssssssss sdfsssssssssssssssssss
+       <p>dfasdfasfccc</p>
+        <p>dfasdfasfccc</p>
+         <p>dfasdfasfccc</p>
+          <p>dfasdfasfccc</p>
+        
+    </article> 
+    <aside>
+    	 
+    	旁边。。。。
+    	 
+    </aside>
+    <footer> footer</footer>
+</div>
+ 
+ 
+</body> 
+</html> 

@@ -1,0 +1,63 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<title>test</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+ <script src="js_tpl.js"></script>
+ <style> 
+ 	#note { border: 1px solid red; }
+ 	.font_setting{  /* http://unitinteractive.com/blog/2008/06/26/better-css-font-stacks/ */
+ 		font-family: Verdana,sans-serif; /* 字体族*/
+ 		font-size:small;       /*字体大小，默认情况下1em=16px,浏览器是按em设置的，所以改变body其他就会按比例变 ， 
+ 		                       em 根据祖先元素变 ， rem 根据根元素变 */
+ 		font-style:normal;    /* 字体样式，正体 还是 斜体*/
+ 		font-weight:100;      /* 100 － 900*/
+ 		font-variant:small-caps;   /* 字体变化*/
+ 	}
+ 	.text_setting{
+ 	text-indent : 3em; /* 文本缩进 可正负*/
+ 	letter-spacing:.2em; /* 字符间距*/
+ 	word-spacing: .5em;  /* 词间距*/
+ 	text-decoration:line-through; /*文本装饰*/
+ 	text-align: right; /*文本对齐*/
+ 	line-height: 1.5; /*行高， 可以 font:1.2em / 1.4 方式设置*/
+ 	text-transform: capitalize ; /* 文本转换*/
+ 	vertical-align: 60%; /*垂直对齐*/
+ 	}
+ 	
+ 	p.custom sub{font-size:60%; vertical-align: -.4em;}
+ 	p.custom sup{font-size:60%; vertical-align: .65em;}
+ 	p.customsmall {font-size:.8em; vertical-align: 1em;}
+ 	
+ 	nav a {text-decoration:none;}
+ 	a:hover{text-decoration:underline;}
+ 	h1 + p::first-letter{  /* + 是近邻同胞选择符*/
+ 		font-family:Times,serif;
+ 		font-size: 50px;
+ 		float: left;
+ 		line-height:0.8;
+ 		border:1px solid;
+ 		
+ 		padding:1px 10px 0 0;
+ 	}
+ </style>
+</head> 
+<body> 
+ <p class="customsmall"> <sup>&Dagger;</sup><em>The is means ..</em></p>
+ <p class="custom"> spring H<sub>2</sub>O. it's 10<sup>5</sup>times .... </p>
+ 
+ <h1>header</h1>
+ <p>The line...字体3个来源： 用户机器，网上（link标签连接），服务器（@font－face发送）字体3个来源：
+ 	 用户机器，网上（link标签连接），服务器（@font－face发送）字体3个来源： 用户机器，网上（link标签连接），
+ 	 服务器（@font－face发送）字体3个来源： 用户机器，网上（link标签连接），服务器（@font－face发送）字体3个来源： 
+ 	 用户机器，网上（link标签连接），服务器（@font－face发送）字体3个来源： 用户机器，网上（link标签连接），
+ 	 服务器（@font－face发送）字体3个来源： 用户机器，网上（link标签连接），服务器（@font－face发送）字体3个来源：
+ 	  用户机器，网上（link标签连接），服务器（@font－face发送）字体3个来源： 用户机器，网上（link标签连接），
+ 	  服务器（@font－face发送）字体3个来源： 用户机器，网上（link标签连接），服务器（@font－face发送）字体3个来源： 
+ 	  用户机器，网上（link标签连接），
+ 	服务器（@font－face发送）字体3个来源： 用户机器，网上（link标签连接），服务器（@font－face发送）</p>
+ <div id="note">
+ 	字体3个来源： 用户机器，网上（link标签连接），服务器（@font－face发送）
+</div>
+</body> 
+</html> 
