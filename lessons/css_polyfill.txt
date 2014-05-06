@@ -1,0 +1,52 @@
+
+<!--[if lte IE 8]> <!-- IE 条件注释 -->
+<link src="ie_only.css" rel="stylesheet" />
+<![endif]-->
+这种特殊格式的HTML 注释会被非IE 浏览器忽略，只有IE 浏览器才会执行其中的
+代码。
+
+
+举个简单的例子吧，IE9 之前的浏览器都不支持多背景，因此后备代码就是在多背景
+声明之前简单地再加一条单背景声明，比如：
+.someElement {background-image:url(images/basic_image.jpg);}
+.someElement {background-image:
+url(images/cool_image1.jpg),
+url(images/cool_image2.jpg),
+url(images/cool_image3.jpg);
+}
+
+
+Paul Irish 维护了一个完整的腻子脚本列表，地址为：https://github.com/Modernizr/
+Modernizr/wiki/HTML5-Cross-Browser-Polyfills。
+
+要在页面中添加一段腻子脚本，首先要下载并将其保存在网站的一个文件夹中。我
+为此创建了一个helpers 文件夹。然后，在页面<head>标签中添加一个<script>标签
+把它加载进来。
+<script type="text/javascript" src="helpers/selectivizr.js">
+</script>
+怎么确定是否需要某个腻子脚本呢？推荐大家使用Modernizr。Modernizr（http://
+modernizr.com）是一个JavaScript 文件，能够帮你检测用户浏览器对HTML5 和CSS3
+功能的支持情况，然后为顶级的<html>标签添加一组类，标明浏览器支持什么功能。
+另外，它还会设定一个JavaScript 对象modernizr 的属性，以便你通过JavaScript 来
+测试这些功能。Modernizr 添加的类主要是为CSS 提供便利。
+
+
+
+
+html5shiv.js（http://code.google.com/p/html5shiv）：让IE8 及更低版本的IE 识别
+section、 article、nav 等HTML5 元素。
+ selectivizr（http://www.selectivizr.com）：让IE（6/7/8）支持::first-child 等高级
+CSS 选择符。
+ IE9.js（http://code.google.com/p/ie7-js）：修复从IE6 到IE9 的很多bug 和缺损
+功能。
+ CSS3Pie（http://css3pie.com）：让IE6 到IE9 支持圆角、背景渐变、边框图片、盒
+阴影、RGBa 颜色等可视化的CSS3 功能。
+ Respond.js（https://github.com/scottjehl/respond）让旧版本浏览器支持媒体查询。
+ -prefix-free（http://lea.verou.me/projects）为需要厂商前缀的CSS3 声明添加前缀（参
+见第4 章）。
+ borderBoxModel.js（https://github.com/albertogasparin/borderBoxModel）：让IE6 和
+IE7 支持CSS3 的box-sizing 属性。
+这些腻子脚本都是我最常用的，它们对弥补Internet Explorer 的不足和缺失尤其有用。
+要了解更多的技术提示信息，请大家移步http://www.stylinwithcss.com。
+
+

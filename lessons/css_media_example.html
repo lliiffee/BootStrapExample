@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>test</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script src="js_tpl.js"></script>
+		<link rel="stylesheet" href="css/main.css">
+		<style>
+			#note {
+				border: 1px solid red;
+			}
+		</style>
+	</head>
+	<body>
+
+		<div id="note">
+			<p>
+				这条规则声明：如果当前页面要打印，那么就不显示nav 元素。
+				@media print {
+				nav {
+				display:none;
+				}
+				}
+			</p>
+
+			<p>
+				/*只在屏幕宽度不大于568 像素时应用*/
+				@media screen and (max-width:568px) {
+				.column {float:none; width:96%; margin:0 auto;}
+				}
+				<br>
+				如果页面是通过屏幕显示，而且该屏幕宽度不超过568 像素，那
+				么CSS 就会取消带.column 类的元素的浮动，让布局区块上下堆叠，且让该元素宽度
+				为屏幕的96%，同时在屏幕上居中。
+			</p>
+
+			<p>
+				媒体类型 最常用的媒体类型如下所示。
+				 all：匹配所有设备；
+				 handled：匹配手持设备（小屏幕、单色、带宽有限）；
+				 print：匹配分页媒体或打印预览模式下的屏幕；
+				 screen：匹配彩色计算机屏幕；
+				 其他媒体类型还有braille（盲文点字触觉反馈设备）、embossed（盲文分页打印机）、
+				projection（投影仪）、speech（语音合成器）、tty（电话机屏幕等固定宽度字符栅格
+				设备）和tv（电视机）。
+				要想详细了解这些媒体类型，请参考CSS 2.1 标准：http://www.w3.org/TR/CSS2/media.html。
+			</p>
+
+			<p>
+				媒体特性 媒体特性也就是媒体某一方面的特征，一般带有min-或max-前缀。最常用的媒体
+				特性如下。
+				min-device-width 和max-device-width：匹配设备屏幕的尺寸；
+				min-width 和max-width：匹配视口的宽度，例如浏览器窗口宽度；
+				orientation（值为portrait 和landscape）：匹配设备是横屏还是竖屏。
+				如果想通过媒体查询来根据用户对浏览器窗口的缩放重新调整布局，应该使用min-width 和
+				max-width。要了解所有媒体特性，请参考CSS3 标准：http://www.w3.org/TR/css3-mediaqueries/
+				#media1。
+				可以使用逻辑运算符and、not、or 及关键字all、only 组合媒体类型和媒体特性。
+				其中，only 关键字可以用来对不支持媒体查询的浏览器隐藏样式表。关于媒体查询中可以使
+				用的逻辑运算符的详细信息，请参考这里：https://developer.mozilla. org/en-US/docs/CSS/
+				Media_queries#Operator_precedence。
+				这里有一篇关于媒体查询的扫盲文章，非常不错：http://www.javascriptkit.com/dhtmltutors/
+				cssmediaqueries.shtml。至于要在IE8 及以下版本的IE 浏览器中使用媒体查询，可以使用腻子
+				脚本Respond.js（参见本书附录末尾的“腻子脚本”）。
+			</p>
+
+			<p>
+				【link type="text/css" media="print" href="css/print_styles.css" /】
+				【link type="text/css" media="screen and (max-width:568px)" href="css/iphone_styles.css" /】
+			</p>
+			<p>
+				断点:
+				@media screen and (max-width:640px) { /*CSS 规则*/ }
+			</p>
+
+			<p>
+				用[meta]标签设定视口
+				[meta name="viewport" content="width=device-width; maximumscale=1.0" /]
+				这个[meta]标签告诉浏览器按照屏幕宽度来显示网页，不要缩小网页。虽然这样可
+				以让布局以实际宽度显示，但在iOS 设备（如iPad 和iPhone）中却会引发一个已知
+				的bug
+				关于[meta]标签，其实还有很多内容值得深究，详细情况请参考这里吧：http://
+				developer.android.com/guide/webapps/targeting.html。
+
+			</p>
+
+			<p>
+				img {max-width:100%;}
+				这条规则可以确保这些大图永远不会比它们的容器更宽，同时也不会影响它们缩小。
+				这条规则体现了响应式设计的第三个要素：弹性图片。
+			</p>
+
+			<p>
+				Safari Mobile（iPhone 浏览器）中有一个bug，在设备从竖屏旋转到横屏时会导致缩
+				放和重绘问题，如图8-8 所示。
+				有一个JavaScript 脚本可以解决这个重绘问题，我已经把它包含在完成后的HTML
+				示例文件中了。要了解关于这个bug 的更多信息，请参考这里：http://webdesignerwall.
+				com/tutorials/iphone-safari-viewport-scaling-bug。访问这里下载脚本：https://gist.github.
+				com/901295。
+
+		</div>
+	</body>
+</html>
