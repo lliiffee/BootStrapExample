@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>test</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script src="js_tpl.js"></script>
+		<link rel="stylesheet" href="css/main.css">
+		<style>
+			#note {
+			border: 1px solid red;
+			}
+
+			form.stylin_form1 {
+			width: 14em; /* 表单整体宽度 */
+			margin: 20px auto; /* 在容器内居中 */
+			border: 1px solid #bbb7ae;
+			padding: .5em .5em .15em;
+			}
+			.stylin_form1 h3 {/* 表单主标题 */
+			margin: 0;
+			padding: 0 0 .2em .2em;
+			font-weight: 600;
+			color: #bbb7ae;
+			}
+			.stylin_form1 fieldset {/*包含控件与标注*/
+			margin: 0;
+			padding: 0 0 .2em 0;
+			width: 100%;
+			border: 0;
+			}
+			/* legend 元素的位置不同寻常，所以我把它的文本包含在一个块级span 中，转而为span
+			设定样式 */
+			.stylin_form1 legend {
+			width: 100%;
+			padding: .3em 0;
+			background: #bbb7ae; /*灰色条*/
+			}
+
+			.stylin_form1 legend span {/* 设定标题文本的样式 */
+			display: block;
+			font-size: 1em;
+			line-height: 1.1em;
+			padding: 0 0 0 .4em;
+			font-weight: 700;
+			color: #fff; /*灰色条上的反白文本*/
+			}
+
+			.stylin_form1 section {
+			overflow:hidden; /* 强制section 包含表单控件及标注 */
+			padding:.2em 0 .4em 0;
+			border-bottom:8px solid #e7e5df; /* 根据需要在每个section 间增加间距 */
+			}
+			.stylin_form1 section:last-child { /* 每组最后一个section 没有边框 */
+			border-bottom:0px;
+			}
+			.stylin_form1 section label, /* 表单控件的标注 */
+			.stylin_form1 section h4 { /* h4 是复选框和单选按钮组的标题 */
+			display:block;
+			clear:both;
+			margin:.3em .3em 0 0; /* 右外边距确保标注文本在碰到input 之前会换行 */
+			padding-bottom:.1em;
+			font-size:.8em;
+			font-family:'Droid Sans';
+			font-weight:400;
+line-height:1.1;
+}
+.stylin_form1 section label span, /* 星号表示必填字段 */
+.stylin_form1 section h4 span {
+font-size:.75em;
+vertical-align:text-top;
+color:#f00;
+}
+.stylin_form1 section p.note { /*说明星号是必填字段的文本*/
+font-size:.7em;
+color:#f00;
+margin:0;
+padding:0 0 .3em 0;
+}
+
+.stylin_form1 section input,
+.stylin_form1 section textarea,
+.stylin_form1 section select {
+margin:.2em .5em .2em 0;
+padding:.2em .4em; /* 给input 中的文本添加间距 */
+color:#000;
+box-shadow:1px 1px 3px #ccc;
+font-size:.8em;
+/* 针对Firefox - 没有这条声明会在textarea 上使用Courier */
+font-family:inherit;
+outline:none; /* 去掉默认蓝色聚焦轮廓线 */
+}
+/* 设定文本字段（文本、密码、日期、文本区等）的样式，并加圆角 */
+.stylin_form1 section input,
+.stylin_form1 section textarea {
+width:12em; /*设定字段宽度*/
+border:1px solid #bbb7ae;
+border-radius:3px; /*圆角边框*/
+}
+.stylin_form1 section textarea {
+height:5em; /* textarea 的高度 */
+margin-top:.3em; /* 与上面label 的间距 */
+line-height:1.1;
+}
+.stylin_form1 section p { /*控件使用说明*/
+margin:.3em .75em 0;
+clear:both;
+font-size:.7em;
+line-height:1.1;
+color:#000;
+}
+.stylin_form1 section p.error {
+color:#f00; /* 添加error 类，把说明文字设定为红色 */
+}
+		</style>
+	</head>
+	<body>
+
+		<!-- 必要的form 标签 -->
+		<form class="stylin_form1" action="process_form.php" method="post">
+			<h3>A Stylin' Form</h3>
+			<!-- 控件组，即各种控件的容器 -->
+			<fieldset>
+				<!-- 控件组的文字说明，或标题 -->
+				<legend>
+					<span>Part 1 &#8226; Basic Controls</span>
+				</legend>
+				<!-- 开始单行文本输入控件 -->
+				<section>
+					<p class="note">
+						* indicates required field
+					</p>
+					<!-- for 属性把标注与控件关联起来，它的值必须与控件ID 值相同 -->
+					<label for="user_name">User Name<span> *</span></label>
+					<!-- text 属性让这个控件可以输入文本 -->
+					<input type="text" id="user_name" name="user_name" />
+					<p>
+						Please select a user name
+					</p>
+				</section>
+				<!-- 开始密码控件 -->
+				<section>
+					<label for="password">Password<span> *</span></label>
+					<!-- 密码文本显示为掩码 -->
+					<input type="password" id="password" name="password" maxlength="20" />
+					<p>
+						Password must be 8 or more characters
+					</p>
+				</section>
+				<!-- 开始多行文本输入控件 -->
+				<section>
+					<label for="description">Description</label>
+					<textarea id="description" name="description" placeholder="Enter the description here."></textarea>
+				</section>
+				<!-- 开始HTML5 日期控件 -->
+				<section>
+					<label for="description">Date</label>
+					<input type="date" id="special_date" name="event_date" min="2012-09-05" />
+				</section>
+			</fieldset>
+			<fieldset>
+				<legend>
+					<span>Part 2 &#8226; Multiple-Choice Controls</span>
+				</legend>
+				<!-- 开始复选框 -->
+				<section>
+					<h4>Select Any Number</h4>
+					<section>
+						<input type="checkbox" id="check1" name="checkset" value="1"
+						tabindex="4" />
+						<label for="check1">Choice 1</label>
+					</section>
+					<section>
+						<input type="checkbox" checked="checked" id="check2" name=
+						"checkset" value="2" />
+						<label for="check2">Choice 2 is pre-checked</label>
+					</section>
+					<section>
+						<input type="checkbox" id="check3" name="checkset" value="3" />
+						<label for="check3">Choice 3&mdash;add as many as you need! </label>
+					</section>
+					<p>
+						You must choose one or more
+					</p>
+				</section>
+				<!-- 开始单选按钮 -->
+				<section>
+					<h4>Select Only One</h4>
+					<section>
+						<input checked="checked" id="radio1" name="radioset" type="radio"
+						value="Choice_1" />
+						<label for="radio1">Choice 1 is pre-selected and shows the text
+							wraps nicely if it goes to multiple lines.</label>
+					</section>
+					<section>
+						<input id="radio2" name="radioset" type="radio" value="Choice_2" />
+						<label for="radio2">Choice 2</label>
+					</section>
+					<section>
+						<input id="radio3" name="radioset" type="radio" value="Choice_3" />
+						<label for="radio3">Choice 3</label>
+					</section>
+				</section>
+				<!-- 开始选项列表（下拉列表） -->
+				<section>
+					<label for="select_choice">Select Your Choice</label>
+					<select id="select_choice" name="select_choice">
+						<option value="0">None</option>
+						<option value="1">Choice 1</option>
+						<option value="2">Choice 2</option>
+						<option value="3">Choice 3</option>
+						<option value="4">Choice 4</option>
+					</select>
+				</section>
+			</fieldset>
+			<!-- 开始提交按钮 -->
+			<section>
+				<input type="submit" value="Submit This Form" />
+			</section>
+		</form>
+ 
+	</body>
+</html>

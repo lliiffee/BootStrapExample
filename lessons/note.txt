@@ -1,1 +1,6 @@
 http://www.360doc.com/content/12/1122/23/9200790_249657089.shtml
+http://www.360doc.com/myfollow.aspx
+
+要了解关于input 元素更详细的介绍，可以参考这两篇文章：http://htmlhelp.com/
+reference/html40/forms/input.html ， 还有http://www.javascript-coder.com/html-form/
+html-form-tutorial-p1.phtml
