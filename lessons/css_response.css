@@ -3,16 +3,13 @@ body {
 	background: #efefef;
 	margin: 0;
 }
-/*
+
  wrapper {
  width: 980px;
  margin: 0 auto 20px;
  }
- */
-/*98%可以保证两边有一点边距*/
-#wrapper {
-	width: 98%;
-}
+ 
+
 
 header {
 	position: relative; /*为页面标题和搜索表单提供定位上下文*/
