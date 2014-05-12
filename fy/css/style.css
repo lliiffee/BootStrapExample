@@ -230,7 +230,7 @@ header .filter-category {display:none;}
 	font:14px/18px "Times New Roman", Times, serif;
 	color: #222;
 	overflow:hidden;
-	padding-top: 500px;
+	padding-top: 10px;
 }
 .posts .item {
 	float:left;
