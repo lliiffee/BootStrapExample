@@ -17,6 +17,18 @@
  }
  img {float: left;}
  footer { border: 1px solid red; clear: left;}
+ 
+ .main{
+ 	width:800px;
+ 	height:600px;
+ 	position: relative;
+ }
+ 
+ .main ul{
+ 	position:absolute;
+ 	left:0;
+ 	bottom:0;
+ }
  </style>
 </head> 
 <body> 
@@ -54,6 +66,17 @@
  	<p class="clearfix">its fun for float 2...</p>
  </section>
  
+ 
+   <section class="main">
+ 	  <ul>
+ 		<li>1.section {border:1px solid blue; margin: 0 0 10px 0; overflow: hidden; }</li>
+ 		<li>2.section {border:1px solid blue; margin: 0 0 10px 0; float: left;  width:100%;} 
+ 			<br>footer { border: 1px solid red; clear: left;}</li>
+ 			
+ 		<li>3.在最后加上空的元素，并clear 掉。</li>
+ 			
+ 	  </ul>
+ 	</section>
 </body> 
  
 </html> 

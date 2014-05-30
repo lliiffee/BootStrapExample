@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>test</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script src="js_tpl.js"></script>
+		<link rel="stylesheet" href="css/main.css">
+		<style>
+			#note {
+				border: 1px solid red;
+			}
+
+			.div_table {
+				display: table;
+				border-collapse: separate;
+			}
+			.div_row {
+				display: table-row;
+				border: 1px solid red;
+			}
+			.div_row div {
+				display: table-cell;
+			}
+			
+			
+			.div_row .one {
+				width: 200px;
+			}
+			.div_row .two {
+				width: 200px;
+			}
+			.div_row .three {
+				border: 1px solid red;
+			}
+
+			.div_row .four {
+				width: 400px;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div class="div_table">
+			<div class="div_row">
+				<div class="one">
+					1
+				</div>
+				<div class="two">
+					2
+				</div>
+				<div class="three">
+					3
+				</div>
+			</div>
+			<div class="div_row">
+				<div class="one">
+					1
+				</div>
+				<div class="four">
+					2
+				</div>
+				<div class="three">
+					3
+				</div>
+			</div>
+		</div>
+
+		<div id="note"></div>
+	</body>
+</html>
+
